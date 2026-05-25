@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: {{ brand_colors[1] if brand_colors|length > 1 else '#06132B' }};
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: white;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide-number {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-size: 24px;
+    opacity: 0.4;
+    letter-spacing: 2px;
+  }
+  .accent-bar {
+    width: 60px;
+    height: 6px;
+    background: {{ brand_colors[0] if brand_colors else '#1D9E75' }};
+    border-radius: 3px;
+    margin-bottom: 40px;
+  }
+  .headline {
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+  }
+  .body {
+    font-size: 34px;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0.85;
+    max-width: 900px;
+  }
+  .brand-tag {
+    position: absolute;
+    bottom: 40px;
+    font-size: 22px;
+    opacity: 0.4;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="slide-number">{{ slide_number }}/{{ total_slides }}</div>
+  <div class="accent-bar"></div>
+  <div class="headline">{{ headline }}</div>
+  <div class="body">{{ body }}</div>
+  <div class="brand-tag">{{ niche }}</div>
+</body>
+</html>

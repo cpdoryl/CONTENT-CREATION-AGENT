@@ -1,0 +1,12 @@
+[browser]
+gatherUsageStats = false
+
+[client]
+showErrorDetails = true
+
+[logger]
+level = "error"
+
+[server]
+headless = true
+port = 8501
